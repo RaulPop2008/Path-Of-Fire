@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cvm0sskmnqoyb"]
+
+[ext_resource type="Script" uid="uid://lgl4vwkujlh7" path="res://scripts/dialogue_start.gd" id="1_1texo"]
+[ext_resource type="Texture2D" uid="uid://cae3spvl0juql" path="res://sprites/e053d4003daddd0f88f3e1f724420900.jpg" id="2_qpphq"]
+[ext_resource type="FontFile" uid="uid://bb0o44b75c63y" path="res://fonts/CaacupeOne-Regular.ttf" id="3_qpphq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_soqyk"]
+texture = ExtResource("2_qpphq")
+
+[node name="DialogueStart" type="Control" unique_id=1797878160]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1texo")
+
+[node name="Panel" type="Panel" parent="." unique_id=2075574024]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_soqyk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1009674670]
+custom_minimum_size = Vector2(560, 320)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0.6, 0.07450981, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("3_qpphq")
+theme_override_font_sizes/normal_font_size = 48
+fit_content = true
+scroll_following = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

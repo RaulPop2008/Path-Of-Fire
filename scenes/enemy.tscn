@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bdb2yjohjqw5o"]
+
+[ext_resource type="Texture2D" uid="uid://c4xio2wq3focj" path="res://sprites/035.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://dc4va6o5g4dvi" path="res://scripts/enemy.gd" id="1_md0e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(20, 96, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(20, 32, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(20, 0, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(20, 64, 20, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soqyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}],
+"loop": 1,
+"name": &"idle_-1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}],
+"loop": 1,
+"name": &"idle_-2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}],
+"loop": 1,
+"name": &"idle_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}],
+"loop": 1,
+"name": &"idle_2",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ysor"]
+radius = 10.049875
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soqyk"]
+height = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_soqyk"]
+radius = 66.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=106712708]
+collision_layer = 0
+script = ExtResource("1_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1477471318]
+sprite_frames = SubResource("SpriteFrames_soqyk")
+animation = &"idle_2"
+frame_progress = 0.037383553
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1013460509]
+shape = SubResource("CircleShape2D_0ysor")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=225160002]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1785924497]
+shape = SubResource("CapsuleShape2D_soqyk")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1198320382]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=2032134340]
+shape = SubResource("CircleShape2D_soqyk")
+
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="area_exited" from="Area2D2" to="." method="_on_area_2d_2_area_exited"]

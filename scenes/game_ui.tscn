@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://8kw7l2x6cj1l"]
+
+[ext_resource type="Script" uid="uid://otm415lfhe47" path="res://scripts/game_ui.gd" id="1_rns2u"]
+[ext_resource type="Script" uid="uid://cjhiwyk1d0eoq" path="res://scripts/universal_button.gd" id="1_yubou"]
+[ext_resource type="Texture2D" uid="uid://cae3spvl0juql" path="res://sprites/e053d4003daddd0f88f3e1f724420900.jpg" id="2_o3bws"]
+[ext_resource type="Script" uid="uid://r3c8peftgrdv" path="res://scripts/options_menu.gd" id="3_u001w"]
+[ext_resource type="Script" uid="uid://411rxvr26jke" path="res://scripts/universal_lable_title.gd" id="4_bt76a"]
+[ext_resource type="Script" uid="uid://dk8e13qrpyk0m" path="res://scripts/universal_label.gd" id="4_u2dgd"]
+[ext_resource type="FontFile" uid="uid://2r8qqyo18j56" path="res://fonts/Kings-Regular.ttf" id="6_e0pfi"]
+[ext_resource type="FontFile" uid="uid://bb0o44b75c63y" path="res://fonts/CaacupeOne-Regular.ttf" id="8_o3bws"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0pfi"]
+texture = ExtResource("2_o3bws")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3bws"]
+texture = ExtResource("2_o3bws")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_soqyk"]
+texture = ExtResource("2_o3bws")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3huio"]
+texture = ExtResource("2_o3bws")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0pfi"]
+load_path = "res://.godot/imported/Team PurrPle logo.png-6c9293bdf01e455fb714a469caba86d6.ctex"
+
+[node name="GameUI" type="Control" unique_id=1045005476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rns2u")
+
+[node name="MainMenu" type="MarginContainer" parent="." unique_id=1385590201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MainMenu" unique_id=1173636601]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_e0pfi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=1552718566]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MainMenu/VBoxContainer" unique_id=484681249]
+layout_mode = 2
+text = "Path Of Fire"
+horizontal_alignment = 1
+script = ExtResource("4_bt76a")
+
+[node name="Button" type="Button" parent="MainMenu/VBoxContainer" unique_id=386844393]
+layout_mode = 2
+text = "{  Start Game  }"
+script = ExtResource("1_yubou")
+
+[node name="Button2" type="Button" parent="MainMenu/VBoxContainer" unique_id=661365]
+layout_mode = 2
+text = "{  Options  }"
+script = ExtResource("1_yubou")
+
+[node name="Button5" type="Button" parent="MainMenu/VBoxContainer" unique_id=45361498]
+layout_mode = 2
+text = "{  Controls  }"
+script = ExtResource("1_yubou")
+
+[node name="Button3" type="Button" parent="MainMenu/VBoxContainer" unique_id=275111112]
+layout_mode = 2
+text = "{  Credits  }"
+script = ExtResource("1_yubou")
+
+[node name="Button4" type="Button" parent="MainMenu/VBoxContainer" unique_id=679794445]
+layout_mode = 2
+text = "{  Quit Game  }"
+script = ExtResource("1_yubou")
+
+[node name="OptionsMenu" type="MarginContainer" parent="." unique_id=243886540]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_u001w")
+
+[node name="Panel" type="Panel" parent="OptionsMenu" unique_id=996775335]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_o3bws")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu" unique_id=688162013]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer" unique_id=1809109494]
+layout_mode = 2
+text = "Options"
+horizontal_alignment = 1
+script = ExtResource("4_bt76a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=2074254670]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer" unique_id=851928767]
+layout_mode = 2
+text = "Volume: "
+script = ExtResource("4_u2dgd")
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/VBoxContainer/HBoxContainer" unique_id=741967912]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=1895090020]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=1713277438]
+layout_mode = 2
+text = "Fullscreen: "
+script = ExtResource("4_u2dgd")
+
+[node name="MenuButton" type="MenuButton" parent="OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=1926970709]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "OFF"
+popup/item_0/id = 0
+popup/item_1/text = "ON"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=1090165230]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=1840523710]
+layout_mode = 2
+text = "Resolution: "
+script = ExtResource("4_u2dgd")
+
+[node name="MenuButton" type="MenuButton" parent="OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=1256146389]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="OptionsMenu/VBoxContainer" unique_id=200036281]
+layout_mode = 2
+text = "{  Go Back  }"
+script = ExtResource("1_yubou")
+
+[node name="ControlsMenu" type="MarginContainer" parent="." unique_id=1717016277]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ControlsMenu" unique_id=256149388]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_soqyk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlsMenu" unique_id=1076585585]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 48
+
+[node name="Label" type="Label" parent="ControlsMenu/VBoxContainer" unique_id=661209147]
+layout_mode = 2
+text = "W A S D - move around
+F - enlighten the fire within
+ESC - pause game"
+script = ExtResource("4_u2dgd")
+
+[node name="Button" type="Button" parent="ControlsMenu/VBoxContainer" unique_id=591091870]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "{  Go Back  }"
+script = ExtResource("1_yubou")
+
+[node name="CreditsMenu" type="MarginContainer" parent="." unique_id=671288693]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CreditsMenu" unique_id=912711980]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3huio")
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsMenu" unique_id=798417152]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsMenu/MarginContainer" unique_id=206725656]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="CreditsMenu/MarginContainer/VBoxContainer" unique_id=885117735]
+layout_mode = 2
+text = "Credits"
+horizontal_alignment = 1
+script = ExtResource("4_bt76a")
+
+[node name="Label2" type="Label" parent="CreditsMenu/MarginContainer/VBoxContainer" unique_id=667705546]
+layout_mode = 2
+text = "A Game Designed By:"
+horizontal_alignment = 1
+script = ExtResource("4_u2dgd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreditsMenu/MarginContainer/VBoxContainer" unique_id=195478320]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CreditsMenu/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1055101433]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.12941177, 0.96862745, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("6_e0pfi")
+theme_override_font_sizes/font_size = 64
+text = "Team PurrPle"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CreditsMenu/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1752096889]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_e0pfi")
+
+[node name="Label3" type="Label" parent="CreditsMenu/MarginContainer/VBoxContainer" unique_id=1718696117]
+layout_mode = 2
+text = "Special Thanks To:"
+horizontal_alignment = 1
+script = ExtResource("4_u2dgd")
+
+[node name="Label4" type="Label" parent="CreditsMenu/MarginContainer/VBoxContainer" unique_id=1041156019]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.07450981, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("8_o3bws")
+theme_override_font_sizes/font_size = 32
+text = "Jephed, Game Between The Lines, https://gamebetweenthelines.com/
+Juan Erviti
+RODWAN, https://rodwan.itch.io/isometric-asset-campfire"
+
+[node name="Button" type="Button" parent="CreditsMenu/MarginContainer/VBoxContainer" unique_id=407065967]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "{  Go Back  }"
+script = ExtResource("1_yubou")

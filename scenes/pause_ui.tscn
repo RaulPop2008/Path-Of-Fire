@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://dkk10mirohjbf"]
+
+[ext_resource type="Script" uid="uid://dk8e4l2cc1l3r" path="res://scripts/pause_ui.gd" id="1_0vm74"]
+[ext_resource type="Script" uid="uid://411rxvr26jke" path="res://scripts/universal_lable_title.gd" id="1_4j456"]
+[ext_resource type="Script" uid="uid://r3c8peftgrdv" path="res://scripts/options_menu.gd" id="2_0vm74"]
+[ext_resource type="Script" uid="uid://dk8e13qrpyk0m" path="res://scripts/universal_label.gd" id="4_ynu8c"]
+[ext_resource type="Script" uid="uid://cjhiwyk1d0eoq" path="res://scripts/universal_button.gd" id="5_0rou8"]
+[ext_resource type="Texture2D" uid="uid://cae3spvl0juql" path="res://sprites/e053d4003daddd0f88f3e1f724420900.jpg" id="5_0vm74"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_blq6o"]
+texture = ExtResource("5_0vm74")
+
+[node name="PauseUI" type="Control" unique_id=161574652]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vm74")
+
+[node name="PauseMenu" type="MarginContainer" parent="." unique_id=880979454]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PauseMenu" unique_id=2038870093]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu" unique_id=469746685]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="PauseMenu/VBoxContainer" unique_id=168392592]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
+script = ExtResource("1_4j456")
+
+[node name="Button" type="Button" parent="PauseMenu/VBoxContainer" unique_id=1547948472]
+layout_mode = 2
+text = "{  Resume  }"
+script = ExtResource("5_0rou8")
+
+[node name="Button2" type="Button" parent="PauseMenu/VBoxContainer" unique_id=1137139054]
+layout_mode = 2
+text = "{  Options  }"
+script = ExtResource("5_0rou8")
+
+[node name="Button3" type="Button" parent="PauseMenu/VBoxContainer" unique_id=1694326360]
+layout_mode = 2
+text = "{  Quit To Main  }"
+script = ExtResource("5_0rou8")
+
+[node name="OptionsMenu" type="MarginContainer" parent="." unique_id=1585176693]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_0vm74")
+
+[node name="Panel" type="Panel" parent="OptionsMenu" unique_id=632847572]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_blq6o")
+
+[node name="Panel2" type="Panel" parent="OptionsMenu" unique_id=1385946306]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu" unique_id=417672583]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer" unique_id=1850820296]
+layout_mode = 2
+text = "Options"
+horizontal_alignment = 1
+script = ExtResource("1_4j456")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=1915492573]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer" unique_id=1283779689]
+layout_mode = 2
+text = "Volume: "
+script = ExtResource("4_ynu8c")
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/VBoxContainer/HBoxContainer" unique_id=2093144464]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=570198144]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=754943258]
+layout_mode = 2
+text = "Fullscreen: "
+script = ExtResource("4_ynu8c")
+
+[node name="MenuButton" type="MenuButton" parent="OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=1067529245]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "OFF"
+popup/item_0/id = 0
+popup/item_1/text = "ON"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless"
+popup/item_2/id = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=501083166]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=155472821]
+layout_mode = 2
+text = "Resolution: "
+script = ExtResource("4_ynu8c")
+
+[node name="MenuButton" type="MenuButton" parent="OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=531358987]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="OptionsMenu/VBoxContainer" unique_id=2115871880]
+layout_mode = 2
+text = "{  Go Back  }"
+script = ExtResource("5_0rou8")

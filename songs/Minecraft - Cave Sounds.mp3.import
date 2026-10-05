@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c21cpjm33r43i"
+path="res://.godot/imported/Minecraft - Cave Sounds.mp3-1a93fe3f9205e69c6a920abebe04f57e.mp3str"
+
+[deps]
+
+source_file="res://songs/Minecraft - Cave Sounds.mp3"
+dest_files=["res://.godot/imported/Minecraft - Cave Sounds.mp3-1a93fe3f9205e69c6a920abebe04f57e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
